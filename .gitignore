@@ -1,0 +1,43 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.swp
+*.swn
+*.swo
+*.pyc
+
+# # Packages #
+# ############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.txt
+
+#  # Logs and databases #
+#  ######################
+*.log
+db.sqlite3
+*.sqlite3
+media
+venv
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+migrations/
