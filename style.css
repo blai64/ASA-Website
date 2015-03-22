@@ -1,0 +1,78 @@
+
+
+.jumbotron {
+	
+	background-image: url("https://scontent-lga.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/10169224_10152319512620435_1683491633775447488_n.jpg?oh=4d2aebfcca001455e77ab0b2e5d533ce&oe=55706734");
+	height: 700px;
+	background-repeat: no-repeat;
+  	background-size: cover;
+
+}
+
+.jumbotron #dumb {
+	font-family: Anton;
+	color: #A6A6A9;
+}
+
+.jumbotron #awk {
+	color:#3074D8;
+}
+
+.jumbotron h1 {
+	float: right;
+	font-size: 35px;
+	color : white;
+}
+
+/* .jumbotron p {
+	text-align: right;
+	font-size: 15px;
+	color : white;
+} */
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #0099cc;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #33a6cc;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #007299;
+    box-shadow: none;
+}
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #007299;
+}
+
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #33a6cc;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+.navbar-brand {
+	font-family: "Gloria Hallelujah", cursive;
+	font-size: 40px;
+
+}
+
+.iframe {
+	margin: auto;
+}
