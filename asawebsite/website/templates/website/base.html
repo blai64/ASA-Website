@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title> CMU ASA Website </title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="ASA Website">
+        <meta name="author" content="Brian Lai">
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-theme.css">
+        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-theme.min.css">
+
+    <!-- FONTS -->
+        <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+ 
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+     
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body role="document" data-spy="scroll" data-target="#myScrollspy" background="{{ STATIC_URL }}css/swirl_pattern.png">
+          <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header col-md-3">
+                <button type="button" class="btn btn-default navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a href="{% url 'home' %}">CMU ASA</a>
+              </div>
+
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                  <li><button type="button" class="btn btn-primary outline"><a href="{% url 'about' %}">About Us</a> <i class="fa fa-heartbeat"></i></li>
+                  <li><button type="button" class="btn btn-primary outline"><a href="{% url 'board' %}">Meet the Board</a> <i class="fa fa-users"></i></li>
+                  <li><button type="button" class="btn btn-primary outline"><a href="{% url 'events' %}">Events </a><i class="fa fa-calendar"></i></li>
+                  <li><button type="button" class="btn btn-primary outline"><a href="{% url 'gallery' %}">Gallery </a><i class="fa fa-camera"></i></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#">Link</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Board Contact</a></li>
+                      <li><a href="#">Suggestion Box</a></li>
+                      <li><a href="#" class="sign">Mailing List Sign Up</a></li>
+                      <li class="divider"></li>
+                      <li><a href="#">Separated link</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+          </nav>  
+        {% block content %}
+        {% endblock %}
+        
+
+    </body>
+</html>

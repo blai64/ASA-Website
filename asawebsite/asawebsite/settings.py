@@ -36,6 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'website',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +53,26 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'asawebsite.urls'
 
+
+
 WSGI_APPLICATION = 'asawebsite.wsgi.application'
+
+
+
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'public', 'media')
+MEDIA_URL = '/media/'
+
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+# MEDIA_ROOT = '/Desktop/asawebsite/asawebsite/gallery'
 
 
 # Database
@@ -76,6 +98,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+SITE_ID = 1
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/

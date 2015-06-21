@@ -1,0 +1,41 @@
+{% extends "website/base.html" %}
+{% block content %}
+
+
+  <button type="button" class="btn btn-primary btn-modal" data-toggle="modal" data-target=".bs-example-modal-sm">Sign Up</button>
+
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="signUpModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4>Mailing List Sign Up</h4>
+        </div>
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Andrew ID" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">@andrew.cmu.edu</span>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+    
+    
+
+  <div class="jumbotron">
+    <div class="container">
+      <h1>Welcome to ASA</h1>     
+    </div>
+  </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{ STATIC_URL }}js/script.js"></script>
+
+{% endblock %}
