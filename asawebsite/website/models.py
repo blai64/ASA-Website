@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django import forms
 # Create your models here.
 
 class Boardmember(models.Model):
@@ -23,20 +24,20 @@ class Boardmember(models.Model):
         return (self.member_fname + " " + self.member_lname)
 
 
-class Album(models.Model):
-    album_name = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    def __unicode__(self):              # __unicode__ on Python 2
-        return self.album_name
-    def was_published_recently(self):
-        now = timezone.now()
-        return now - datetime.timedelta(days=1) <= self.pub_date <= now
-    was_published_recently.admin_order_field = 'pub_date'
-    was_published_recently.boolean = True
-    was_published_recently.short_description = 'Published recently?'
+# class Album(models.Model):
+#     album_name = models.CharField(max_length=200)
+#     pub_date = models.DateTimeField('date published')
+#     def __unicode__(self):              # __unicode__ on Python 2
+#         return self.album_name
+#     def was_published_recently(self):
+#         now = timezone.now()
+#         return now - datetime.timedelta(days=1) <= self.pub_date <= now
+#     was_published_recently.admin_order_field = 'pub_date'
+#     was_published_recently.boolean = True
+#     was_published_recently.short_description = 'Published recently?'
 
-class Photo(models.Model):
-    parent_album = models.ForeignKey(Album)
-    image = models.ImageField(upload_to='photogallery')
-    def __unicode__(self):              # __unicode__ on Python 2
-        return self.image.name
+# class Photo(models.Model):
+#     parent_album = models.ForeignKey(Album)
+#     image = models.ImageField(upload_to='photogallery')
+#     def __unicode__(self):              # __unicode__ on Python 2
+#         return self.image.name

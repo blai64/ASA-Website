@@ -6,24 +6,33 @@ urlpatterns = patterns('',
     # url(r'^$', 'asawebsite.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
     url(regex = r'^$',
-    	view = 'website.views.home',
-    	name = 'home'),
+        view = 'website.views.home',
+        name = 'home'),
 
     url(regex = r'^about/$',
-    	view = 'website.views.about',
-    	name = 'about'),
+        view = 'website.views.about',
+        name = 'about'),
 
     url(regex = r'^events/$',
-    	view = 'website.views.events',
-    	name = 'events'),
+        view = 'website.views.events',
+        name = 'events'),
 
     url(regex = r'^gallery/$',
-    	view = 'website.views.gallery',
-    	name = 'gallery'),
+        view = 'website.views.gallery',
+        name = 'gallery'),
 
     url(regex = r'^board/$',
-    	view = 'website.views.board',
-    	name = 'board'),
+        view = 'website.views.board',
+        name = 'board'),
+
+
+    url(regex = r'^join/$',
+        view = 'website.views.join',
+        name = 'join'),
+    url(regex = r'^thanks/$',
+        view = 'website.views.thanks',
+        name = 'thanks'),
+    
 
     
 

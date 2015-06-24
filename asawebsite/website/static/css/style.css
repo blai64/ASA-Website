@@ -26,10 +26,6 @@
 
 
 
-
-
-
-
 .background {
     color: rgba(181,10,30,0.5);
 }
@@ -165,8 +161,6 @@
 	margin: auto;
 }
 
-
-
 /* To move calendar out of the way of NavBar */
 .calendar {
     margin-top: 55px;
@@ -231,4 +225,13 @@
 
 .board-page .info-field div {
     border:1px solid black;
+}
+
+.fblink {
+    margin-top: 200px;
+    float:left;
+}
+
+.offset-top {
+    margin-top: 50px;
 }

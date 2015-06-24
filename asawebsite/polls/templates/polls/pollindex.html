@@ -3,6 +3,7 @@
     {% for question in latest_question_list %}
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
     {% endfor %}
+    <img src="http://www.naggaimages.com/static/images/desktop-year-of-the-tiger-images-wallpaper_wIE6wSr.jpg" alt="">
     </ul>
 {% else %}
     <p>No polls are available.</p>

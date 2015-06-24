@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from website.models import Boardmember, Album, Photo
+from website.models import Boardmember
+# , Album, Photo
 # Register your models here.
 
 class BoardMemberAdmin(admin.ModelAdmin):
@@ -18,19 +19,19 @@ class BoardMemberAdmin(admin.ModelAdmin):
 admin.site.register(Boardmember, BoardMemberAdmin)
 
 
-class PhotoInline(admin.TabularInline):
-    model = Photo
-    extra = 3
+# class PhotoInline(admin.TabularInline):
+#     model = Photo
+#     extra = 3
 
 
-class AlbumAdmin(admin.ModelAdmin):
-    fieldsets = [
-        (None,               {'fields': ['album_name']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    ]
-    inlines = [PhotoInline]
-    list_display = ('album_name', 'pub_date', 'was_published_recently')
-    list_filter = ['pub_date']
-    search_fields = ['album_name']
+# class AlbumAdmin(admin.ModelAdmin):
+#     fieldsets = [
+#         (None,               {'fields': ['album_name']}),
+#         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
+#     ]
+#     inlines = [PhotoInline]
+#     list_display = ('album_name', 'pub_date', 'was_published_recently')
+#     list_filter = ['pub_date']
+#     search_fields = ['album_name']
 
-admin.site.register(Album, AlbumAdmin)
+# admin.site.register(Album, AlbumAdmin)
