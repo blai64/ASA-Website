@@ -6,7 +6,7 @@ from django.template import RequestContext, loader
 
 
 # for the blog
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.core.paginator import Paginator, InvalidPage, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
 
 
@@ -43,7 +43,7 @@ def board(request):
     template = loader.get_template('website/board.html')
     context = RequestContext(request, {
         'member_list': member_list,
-        })
+    })
     return HttpResponse(template.render(context))
 
 def join(request):
@@ -61,24 +61,21 @@ def thanks(request):
         return render(request, "website/thanks.html")
 
 def blog(request):
-    posts = BlogPost.objects.all().order_by("-created")
+    post_list = BlogPost.objects.all().order_by("-created")
+    paginator = Paginator(post_list,2)
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger: 
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
     template = loader.get_template('website/list.html')
     context = RequestContext(request, {
-        'posts' : posts
-        })
+        'posts': posts,
+    })
     return HttpResponse(template.render(context))
 
-
-
-
-    # paginator = Paginator(posts,2)
-
-    # page = request.GET.get('page')
-    # try:
-    #     posts = paginator.page(page)
-    # except PageNotAnInteger: 
-    #     posts - paginator.page(1)
-    # except EmptyPage:
-    #     posts = paginator.page(paginator.num_pages)
-
-    # return render_to_response("website/gallery.html", {"posts" : posts})  
+    # return render_to_response("website/list.html", {"posts" : posts})  
