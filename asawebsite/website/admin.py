@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from website.models import Boardmember
+from website.models import Boardmember, BlogPost
 # , Album, Photo
 # Register your models here.
 
@@ -16,6 +16,16 @@ class BoardMemberAdmin(admin.ModelAdmin):
         ('Fun Fact', {'fields': ['fun_fact']}),
     ]
 
+class BlogPostAdmin(admin.ModelAdmin):
+    fieldsets = [
+        ('Title',               {'fields': ['title']}),
+        ('Body',               {'fields': ['body']}),
+        ('created', {'fields': ['created']}),   
+    ]
+
+
+
+admin.site.register(BlogPost, BlogPostAdmin)
 admin.site.register(Boardmember, BoardMemberAdmin)
 
 

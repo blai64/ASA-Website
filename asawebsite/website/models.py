@@ -24,6 +24,14 @@ class Boardmember(models.Model):
         return (self.member_fname + " " + self.member_lname)
 
 
+
+class BlogPost(models.Model):
+    title = models.CharField(max_length=60)
+    body = models.TextField()
+    created = models.DateTimeField(default=datetime.datetime.now())
+    def __unicode__(self):
+        return self.title
+
 # class Album(models.Model):
 #     album_name = models.CharField(max_length=200)
 #     pub_date = models.DateTimeField('date published')

@@ -29,9 +29,14 @@ urlpatterns = patterns('',
     url(regex = r'^join/$',
         view = 'website.views.join',
         name = 'join'),
+
     url(regex = r'^thanks/$',
         view = 'website.views.thanks',
         name = 'thanks'),
+
+    url(regex = r'^blog/$',
+        view = 'website.views.blog',
+        name = 'blog'),
     
 
     
