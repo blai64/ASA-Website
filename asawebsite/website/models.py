@@ -25,12 +25,22 @@ class Boardmember(models.Model):
 
 
 
+
+
 class BlogPost(models.Model):
     title = models.CharField(max_length=60)
     body = models.TextField()
     created = models.DateTimeField(default=datetime.datetime.now())
+    picture = models.ImageField(upload_to='photogallery', blank=True)
+
+    def admin_image(self):
+        return '<img src="%s"/>' % self.picture
+    admin_image.allow_tags = True
     def __unicode__(self):
         return self.title
+
+
+
 
 # class Album(models.Model):
 #     album_name = models.CharField(max_length=200)

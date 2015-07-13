@@ -20,7 +20,8 @@ class BlogPostAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Title',               {'fields': ['title']}),
         ('Body',               {'fields': ['body']}),
-        ('created', {'fields': ['created']}),   
+        ('created', {'fields': ['created']}),
+        ('Image'  , {'fields' : ['picture']})   
     ]
 
 
