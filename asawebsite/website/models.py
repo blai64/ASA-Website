@@ -18,7 +18,7 @@ class Boardmember(models.Model):
     fun_fact = models.CharField(max_length=1000,default='', blank=True)
     fave_mem = models.CharField(max_length=1000,default='', blank=True)
     
-    fb_id = models.CharField(max_length=200, default='')
+    fb_id = models.CharField(max_length=200, default='', blank=True)
 
     def __unicode__(self):
         return (self.member_fname + " " + self.member_lname)

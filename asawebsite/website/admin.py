@@ -10,7 +10,6 @@ class BoardMemberAdmin(admin.ModelAdmin):
         ('Postiion', {'fields': ['position']}),
         ('Major/Minor', {'fields': ['major_minor']}),
         ('Year', {'fields': ['year']}),
-        ('Facebook ID', {'fields': ['fb_id']}),
         ('Why ASA', {'fields': ['why_ASA']}),
         ('Fave Mem', {'fields': ['fave_mem']}),
         ('Fun Fact', {'fields': ['fun_fact']}),
