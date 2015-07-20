@@ -72,9 +72,10 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.app_directories.Loader',
 )
 
+from photologue import PHOTOLOGUE_APP_DIR
 
-
-TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates'),
+                os.path.join(PHOTOLOGUE_APP_DIR, 'contrib/bootstrap/templates')]
 # MEDIA_ROOT = '/Desktop/asawebsite/asawebsite/gallery'
 
 

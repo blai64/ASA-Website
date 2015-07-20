@@ -13,6 +13,7 @@ from django.core.urlresolvers import reverse
 
 from website.forms import JoinForm
 from website.models import Boardmember, BlogPost
+from photologue.models import Photo, Gallery
 
 # Create your views here.
 
@@ -29,8 +30,13 @@ def events(request):
         return render(request, "website/events.html")
 
 def gallery(request):
-    if request.method == "GET":
-        return render(request, "website/gallery.html")
+    photo_list = Photo.objects.all()
+    template = loader.get_template('website/gallery.html')
+    context = RequestContext(request, {
+            'photo_list' : photo_list})
+    return HttpResponse(template.render(context))
+#    if request.method == "GET":
+#       return render(request, "website/gallery.html")
 
 # def board(request):
 #   member_list = Boardmember.objects

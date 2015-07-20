@@ -11,8 +11,13 @@
                 <div class="panel panel-default col-md-12">
                     <div class="panel-body">
                         <div class="title"><h1>{{ post.title }} <small>{{ post.created }}</small></h1></div>
-                            <img src="{{ post.picture.url }}">
+                            <hr></hr>
+                            <div class="bp-pic">
+                                <img src="{{ post.picture.url }}" class="bp-pic">
+                            </div>
+                            
                             <ul>
+                                <hr></hr>
                                 <div class="body">{{ post.body|linebreaks }}</div>
                             </ul>
                     </div>
