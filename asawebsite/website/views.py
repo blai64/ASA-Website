@@ -45,7 +45,9 @@ def gallery(request):
 #       return render(request, template_name = "website/board.html", context=cont)
 
 def board(request):
-    member_list = Boardmember.objects.all()
+    member_list_left = Boardmember.objects.all()[::2]
+    member_list_right = Boardmember.objects.all()[1::2]
+    member_list = zip(member_list_left, member_list_right)
     template = loader.get_template('website/board.html')
     context = RequestContext(request, {
         'member_list': member_list,

@@ -195,6 +195,7 @@
     margin-left: 50px;
 }
 
+
 .btn-modal {
     margin-top: 100px;
     float:right;
@@ -243,6 +244,37 @@
 .board-page .info-field div {
     border:1px solid black;
 }
+.board-page .media-object{
+    display:inline-block;
+    float:left;
+}
+.board-page .panel {
+    height:300px;
+    background: rgba(150,150,150,0.6);
+}
+.board-page .board-r{
+    float:right;
+    border-radius: 0 0 0 50px;
+}
+.board-page .board-l{
+    border-radius: 0 0 50px 0;
+}
+.board-r .media-body{
+    text-align:right;
+}
+
+
+.board-page .back {
+    position:fixed;
+    height:300px;
+    color: #a6a6a6;
+    opacity:0.6;
+}
+
+
+
+
+
 
 .fblink {
     clear:left;

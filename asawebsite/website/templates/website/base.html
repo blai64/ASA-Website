@@ -11,8 +11,10 @@
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-theme.css">
         <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-theme.min.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/basic.css">
-        <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/galleriffic-2.css">
+        {% block style %}
+        {% endblock %}
+        
+        
 
     <!-- FONTS -->
         <link href='http://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>

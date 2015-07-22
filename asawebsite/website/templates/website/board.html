@@ -1,4 +1,7 @@
 {% extends "website/base.html" %}
+{% block style %}
+{% endblock%}
+
 {% block content %}
 
 
@@ -6,40 +9,36 @@
     {% if member_list %}
         
         <div class="row board-page">
-        {% for member in member_list %}
-          <div class="col-sm-6 col-md-2">
-            <div class="thumbnail">
-              <img src="#" class="propic">
-              <!-- <img src="{{ member.pro_img }}" class="propic"> -->
-              <div class="caption">
-                <h3>{{ member.member_fname }} <span>"{{ member.member_nName }}"</span> {{ member.member_lname }} </h3>
-                
-                <p>Year: {{ member.year }}</p>
-                <p>Areas of Study: {{ member.major_minor }}</p>
-
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#{{ member.fname }}{{ member.lname }}Modal">About</button>
-
-                    <div class="modal fade bs-example-modal-lg modal-{{ member.fname }}{{ member.lname }}" tabindex="-1" role="dialog" aria-labelledby="{{ member.fname }}{{ member.lname }}label" aria-hidden="true" id="{{ member.fname }}{{ member.lname }}Modal">
-                      <div class="modal-dialog modal-lg">
-                        <div class="modal-content">
-                          <div class="info-field"><h2>Why ASA?</h2>lalalallallalalalasldlasdlasdkjsdfhalkjsdhflakjsdhflkajsflakjsdhflkajsdhflkajsdhflkajsdfhlkjasdfhlkajsdfhlkajsdfhlkajsdf</div>
-                          <div class="info-field"><h2>Favorite Memory From ASA</h2></div>
-                          <div class="info-field"><h2>Fun Fact</h2></div>
-                          
-
+        {% for member_l,member_r in member_list %}
+            <div class="panel panel-default col-md-9 board-l">
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left">
+                            <img class="media-object" src="..." alt="...">
                         </div>
-                      </div>
+                        <div class="media-body">
+                            <h3 class="media-heading">{{ member_l.member_fname }} <span>"{{ member_l.member_nName }}"</span> {{ member_l.member_lname }} </h3>
+                            <p>Year: {{ member_l.year }}</p>
+                            <p>Areas of Study: {{ member_l.major_minor }}</p>
+                        </div>
                     </div>
-
-
-
-
-
-
-              </div>
+                </div>
             </div>
-          </div>
-          {% endfor %}
+            <div class="panel panel-default col-md-9 board-r">
+                <div class="panel-body">
+                    <div class="media" style="margin-right: 50px">
+                        <div class="media-body">
+                            <h3 class="media-heading">{{ member_r.member_fname }} <span>"{{ member_r.member_nName }}"</span> {{ member_r.member_lname }} </h3>
+                            <p>Year: {{ member_r.year }}</p>
+                            <p>Areas of Study: {{ member_r.major_minor }}</p>
+                        </div>
+                        <div class="media-right">
+                            <img class="media-object" src="..." alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
         </div>            
         
     {% else %}
