@@ -1,4 +1,17 @@
 
+@font-face {
+  font-family: 'Tracion';
+  src: url('../fonts/Tracion-Normal.ttf');
+}
+@font-face {
+  font-family: 'ChunkFive';
+  src: url('../fonts/ChunkFive.otf');
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .navbar .container-fluid{
     background-color: #CC071E;
 }

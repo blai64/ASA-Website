@@ -17,10 +17,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dw)q2j=e6$o*xmtp39!n4jf^qp#9!o69^wf_0)qg4vf$!588l2'
+f = open("C:/Users/Brian/Desktop/keys.txt")
+info = f.read().splitlines()
+
+SECRET_KEY = info[0]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+local = True
 
 TEMPLATE_DEBUG = True
 
@@ -113,3 +117,22 @@ SITE_ID = 1
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+if local == False:
+# import os
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    STATIC_ROOT = 'staticfiles'
+    STATIC_URL = '/static/'
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+    )
+
+
+    
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+    AWS_STORAGE_BUCKET_NAME = 'asawebsite'
+    AWS_ACCESS_KEY_ID = info[1]
+    AWS_SECRET_ACCESS_KEY = info[2]
+    S3_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+    MEDIA_URL = S3_URL
+f.close()    

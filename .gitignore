@@ -31,6 +31,10 @@ db.sqlite3
 media
 venv
 
+#my stuff
+##############
+keys.py
+
 # OS generated files #
 ######################
 .DS_Store
@@ -41,3 +45,4 @@ venv
 ehthumbs.db
 Thumbs.db
 migrations/
+
